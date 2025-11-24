@@ -1,4 +1,5 @@
 import { createBrowserRouter } from 'react-router-dom'
+import FormCompraCartones from './views/FormCompraCartones';
 import Layout from "./layouts/Layout";
 import Inicio from './views/Inicio'
 
@@ -15,6 +16,11 @@ const router = createBrowserRouter ([
             }
 
         ]
+    },
+
+    {
+        path:'/comprarCartones',
+        element: <FormCompraCartones />,
     },
 
 ])

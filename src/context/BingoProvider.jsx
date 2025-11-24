@@ -5,7 +5,6 @@ const BingoContext = createContext();
 const BingoProvider = ({children}) => {
 
   const [ modal, setModal ] = useState(false);
-  
 
   return (
         <BingoContext.Provider
