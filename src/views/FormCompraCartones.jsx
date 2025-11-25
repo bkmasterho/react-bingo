@@ -8,10 +8,12 @@ import {
 
 import CompraCarton1 from '../views/stepsForm/CompraCarton1'
 import CompraCarton2 from '../views/stepsForm/CompraCarton2'
+import CompraCarton3 from '../views/stepsForm/CompraCarton3'
 
 const steps = [
   { component: CompraCarton1 },
   { component: CompraCarton2 },
+  { component: CompraCarton3 },
 ];
 
 export default function MultiStepForm() {

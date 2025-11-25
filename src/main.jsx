@@ -6,9 +6,7 @@ import router from './router'
 import './index.css'
 
 createRoot(document.getElementById('root')).render(
-  <StrictMode>
     <BingoProvider>
         <RouterProvider router={router} />
     </BingoProvider>
-  </StrictMode>,
 )
