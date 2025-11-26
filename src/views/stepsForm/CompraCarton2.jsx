@@ -18,21 +18,23 @@ export default function Step2() {
       
       <div className="max-w-2xl mx-auto rounded-xl shadow-md h-150 mt-10 overflow-y-auto">
 
-      <div className="p-4 bg-sky-500 p-4 bg-sky-500 sticky top-0 z-10">
-        
+      <div className="p-4 bg-sky-500 p-4 bg-sky-500 sticky top-0 z-10 mb-3">
             <h2 className="text-2xl text-slate-900 font-bold uppercase text-center"> Elige tu carton </h2>
       </div>
 
 
-          <div className="grid grid-cols-4 place-items-center">
-
-              {
-                arrNums.map( (valor, index) => (
-                  <h1 key={index}>{valor}</h1>
-                ))
-              }
-
+          <div className="grid grid-cols-4 place-items-center gap-2">
+              {arrNums.map((valor, index) => (
+                <button
+                  key={index}
+                  className="w-12 h-12 flex items-center justify-center rounded-full shadow cursor-pointer 
+                 bg-sky-500 text-white font-semibold hover:bg-sky-600 transition"
+                >
+                  {valor}
+                </button>
+              ))}
           </div>
+          
         </div>
 
       {

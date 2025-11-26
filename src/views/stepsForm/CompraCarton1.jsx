@@ -55,15 +55,20 @@ export default function Step1() {
                       />
                   </div>
 
-                  <button 
-                      className="w-full py-3 bg-sky-500 text-white font-bold rounded-lg hover:bg-sky-600 transition">
-                      Comprar Cartones
-                  </button>
+                    
               </div>
           </div>
 
           {
+            
             /*
+
+            <button 
+                className="w-full py-3 bg-sky-500 text-white font-bold rounded-lg hover:bg-sky-600 transition">
+                Comprar Cartones
+            </button>
+
+
             <h2>Paso 1: Información personal</h2>
 
             <div>

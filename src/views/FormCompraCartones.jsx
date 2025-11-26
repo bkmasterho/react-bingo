@@ -44,17 +44,23 @@ export default function MultiStepForm() {
 
         <StepComponent />
 
-        <div style={{ marginTop: 20 }}>
-          {step > 0 && (
-            <button type="button" onClick={() => setStep(step - 1)}>
-              Atrás
-            </button>
-          )}
+            <div className="flex max-w-2xl mx-auto mt-10">
 
-          <button type="submit">
-            {step === steps.length - 1 ? "Finalizar" : "Siguiente"}
-          </button>
-        </div>
+                {step > 0 && (
+                  <button 
+                    className="w-50 py-3 bg-sky-500 text-white font-bold rounded-lg hover:bg-sky-600 transition cursor-pointer"
+                    type="button" onClick={() => setStep(step - 1)}>
+                      Atrás
+                  </button>
+                )}
+
+                <button type="submit" 
+                  className="w-50 py-3 bg-sky-500 text-white font-bold rounded-lg hover:bg-sky-600 transition cursor-pointer ml-auto">
+                  {step === steps.length - 1 ? "Finalizar" : "Siguiente"}
+                </button>
+
+
+            </div>
 
       </form>
     </FormProvider>
