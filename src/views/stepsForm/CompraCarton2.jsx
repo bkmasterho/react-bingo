@@ -26,6 +26,7 @@ export default function Step2() {
           <div className="grid grid-cols-4 place-items-center gap-2">
               {arrNums.map((valor, index) => (
                 <button
+                  type="button"
                   key={index}
                   className="w-12 h-12 flex items-center justify-center rounded-full shadow cursor-pointer 
                  bg-sky-500 text-white font-semibold hover:bg-sky-600 transition"

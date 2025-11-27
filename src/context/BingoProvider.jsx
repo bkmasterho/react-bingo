@@ -5,11 +5,13 @@ const BingoContext = createContext();
 const BingoProvider = ({children}) => {
 
   const [ modal, setModal ] = useState(false);
+  const [ cantCartones, setCantCartones ] = useState(0);
 
   return (
         <BingoContext.Provider
             value={{
-                hola:'hola'
+                cantCartones,
+                setCantCartones
             }}
         >{children}</BingoContext.Provider>
   )

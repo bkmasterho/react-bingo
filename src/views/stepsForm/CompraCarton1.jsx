@@ -1,9 +1,14 @@
 
 import { useFormContext } from "react-hook-form";
+import useBingo from "../../hooks/useBingo";
+
 
 export default function Step1() {
 
   const { register, formState: { errors } } = useFormContext();
+
+  const { cantCartones } = useBingo();
+  console.log("CantCarton", cantCartones);
 
   return (
 
@@ -19,7 +24,9 @@ export default function Step1() {
               </div>   
 
               <div className="flex gap-2 justify-center mx-auto">
-                  <button className="px-3 py-2 bg-slate-200 rounded-md hover:bg-slate-300">
+                  <button 
+                    type="button"
+                    className="px-3 py-2 bg-slate-200 rounded-md hover:bg-slate-300">                      
                       +
                   </button>
 
@@ -28,7 +35,9 @@ export default function Step1() {
                       className="w-16 text-center border border-slate-300 rounded-md py-2"
                   />
 
-                  <button className="px-3 py-2 bg-slate-200 rounded-md hover:bg-slate-300">
+                  <button 
+                  type="button"
+                  className="px-3 py-2 bg-slate-200 rounded-md hover:bg-slate-300">
                       -
                   </button>
               </div>
