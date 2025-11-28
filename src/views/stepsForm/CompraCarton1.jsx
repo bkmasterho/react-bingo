@@ -6,8 +6,17 @@ import useBingo from "../../hooks/useBingo";
 export default function Step1() {
 
   const { register, formState: { errors } } = useFormContext();
+  
+  const { cantCartones, setCantCartones } = useBingo();
 
-  const { cantCartones } = useBingo();
+  const sumarCarton = () => {
+    setCantCartones(cantCartones+1);
+  }
+
+  const restarCarton = () => {
+    setCantCartones(prev => Math.max(prev - 1, 0));
+  }
+
   console.log("CantCarton", cantCartones);
 
   return (
@@ -25,19 +34,34 @@ export default function Step1() {
 
               <div className="flex gap-2 justify-center mx-auto">
                   <button 
-                    type="button"
-                    className="px-3 py-2 bg-slate-200 rounded-md hover:bg-slate-300">                      
+                        type="button"
+                        className="px-3 py-2 bg-slate-200 rounded-md hover:bg-slate-300"
+                        onClick={() => {
+                            sumarCarton();
+                        }}
+                    >                      
                       +
                   </button>
 
                   <input
                       type="number"
                       className="w-16 text-center border border-slate-300 rounded-md py-2"
-                  />
+                      value={cantCartones}
+                      onChange={(e) => {
+                            const value = Number(e.target.value)
+                            setCantCartones(value < 0 ? 0 : value)
+                        }   
+                      }
+                        
+                    />
 
                   <button 
-                  type="button"
-                  className="px-3 py-2 bg-slate-200 rounded-md hover:bg-slate-300">
+                        type="button"
+                        className="px-3 py-2 bg-slate-200 rounded-md hover:bg-slate-300"
+                        onClick={() => {
+                            restarCarton();
+                        }}                    
+                    >
                       -
                   </button>
               </div>
