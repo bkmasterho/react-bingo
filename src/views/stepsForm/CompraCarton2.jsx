@@ -5,7 +5,7 @@ import useBingo from "../../hooks/useBingo";
 import ModalCarton from "react-modal";
 import Modal from "../../Components/Modal";
 
-export default function Step2() {
+export default function CompraCarton2() {
 
   const { register, formState: { errors } } = useFormContext();
   const { arrCartones, setArrCartones } = useBingo();
@@ -79,8 +79,12 @@ export default function Step2() {
         {
             <ModalCarton
               isOpen={modalAbierto}
+              onRequestClose={() => setModalAbierto(false)}
+              className="modal-content"
+              overlayClassName="modal-overlay"
+              closeTimeoutMS={250}
             >
-              <Modal/>
+              <Modal onClose={() => setModalAbierto(false)} />
             </ModalCarton>
         }
 

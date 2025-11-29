@@ -1,13 +1,16 @@
 
+import { useState, useEffect } from "react";
 import { useFormContext } from "react-hook-form";
 import useBingo from "../../hooks/useBingo";
 
 
-export default function Step1() {
+export default function CompraCarton1() {
+
+  const costoCarton=250;
 
   const { register, formState: { errors } } = useFormContext();
-  
   const { cantCartones, setCantCartones } = useBingo();
+  const [ totalCostoCartones, setTotalCostoCartones ] = useState(costoCarton)
 
   const sumarCarton = () => {
     setCantCartones(cantCartones+1);
@@ -16,6 +19,13 @@ export default function Step1() {
   const restarCarton = () => {
     setCantCartones(prev => Math.max(prev - 1, 0));
   }
+
+ 
+  //Cada vez que cambie la cantidad de cartones multiplico el costo total
+  useEffect(() => {
+      setTotalCostoCartones(costoCarton * cantCartones);
+  }, [cantCartones]);
+
 
   console.log("CantCarton", cantCartones);
 
@@ -68,7 +78,7 @@ export default function Step1() {
 
               <div className="text-center mt-5">
                   <p className="p-2">Total a pagar:</p>
-                  <span className="font-bold text-2xl">Bs 250</span>
+                  <span className="font-bold text-2xl"> Bs {totalCostoCartones} </span>
               </div>
 
               <div className="max-w-sm mx-auto space-y-4 mb-5">

@@ -1,9 +1,18 @@
 import React from 'react'
 
-export default function Modal() {
+export default function Modal({onClose}) {
   return (
-    <div>
-        <h1>Hola From Modal</h1>
-    </div>
+
+    <>
+      <button
+        onClick={onClose}
+        className="px-4 py-2 bg-red-600 text-white rounded hover:bg-red-700"
+      >
+        X
+      </button>
+      
+      <h1>Holaaa</h1>
+    </>
+
   )
 }
