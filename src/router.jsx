@@ -13,16 +13,15 @@ const router = createBrowserRouter ([
             {
                 index: true,
                 element: <Inicio />
+            },
+
+            {
+                path: 'comprarCartones',
+                element: <FormCompraCartones />
             }
 
         ]
     },
-
-    {
-        path:'/comprarCartones',
-        element: <FormCompraCartones />,
-    },
-
 ])
 
 

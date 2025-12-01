@@ -32,7 +32,7 @@ export default function CompraCarton1() {
   return (
 
         <>
-          <div className="mt-10 max-w-2xl mx-auto bg-white rounded-xl shadow-md overflow-hidden h-150">
+          <div className="mt-30 max-w-2xl mx-auto bg-white rounded-xl shadow-md overflow-hidden h-150">
 
               <div className="p-4 bg-sky-500">
                   <h2 className="text-2xl text-slate-900 font-bold uppercase text-center"> Compra tu carton </h2>

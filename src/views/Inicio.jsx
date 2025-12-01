@@ -1,61 +1,68 @@
 
+import { useNavigate } from "react-router-dom";
+
 export default function Inicio() {
-  return (
+    const navigate = useNavigate();
+  
+    return (
 
       <>
-          <div className="mt-10 max-w-2xl mx-auto bg-white rounded-xl shadow-md overflow-hidden">
+            <div className="flex flex-col md:flex-row justify-center items-center h-screen gap-6 md:gap-30">
 
-              <div className="p-4 bg-sky-500">
-                  <h2 className="text-2xl text-slate-900 font-bold uppercase text-center">Compra tu carton</h2>
-              </div>
+            {/* Botón */}
+            <button
+                className="
+                bg-sky-600 hover:bg-sky-500 
+                text-white font-bold 
+                py-6 px-10 
+                text-2xl 
+                rounded-xl 
+                transition-all duration-300
+                shadow-lg
+                cursor-pointer
+                "
+                onClick={() => navigate('/comprarCartones')}
+            >
+                ¡Compra tu cartón aquí!
+            </button>
 
-              <div className="m-5 font-bold text-center">
-                  ¿Cuantos cartones?
-              </div>   
+            {/* Card de ganadores */}
+            <div
+                className="
+                bg-white 
+                rounded-2xl 
+                shadow-xl 
+                p-6 
+                w-90
+                h-100
+                flex flex-col
+                "
+            >
+                <h2 className="text-xl font-semibold mb-3 text-center">Ganadores de la semana</h2>
 
-              <div className="flex gap-2 justify-center mx-auto">
-                  <button className="px-3 py-2 bg-slate-200 rounded-md hover:bg-slate-300">
-                      +
-                  </button>
-
-                  <input
-                      type="number"
-                      className="w-16 text-center border border-slate-300 rounded-md py-2"
-                  />
-
-                  <button className="px-3 py-2 bg-slate-200 rounded-md hover:bg-slate-300">
-                      -
-                  </button>
-              </div>
-
-              <div className="text-center mt-5">
-                  <p className="p-2">Total a pagar:</p>
-                  <span className="font-bold text-2xl">Bs 250</span>
-              </div>
-
-              <div className="max-w-sm mx-auto space-y-4 mb-5">
-                  <div>
-                      <label className="block mb-1 font-medium text-slate-700">Nombre</label>
-                      <input 
-                          type="text"
-                          className="w-full px-3 py-2 rounded-lg shadow-md border border-slate-300 focus:outline-none focus:ring-2 focus:ring-sky-500"
-                      />
-                  </div>
-
-                  <div>
-                      <label className="block mb-1 font-medium text-slate-700">Teléfono</label>
-                      <input 
-                          type="tel"
-                          className="w-full px-3 py-2 rounded-lg shadow-md border border-slate-300 focus:outline-none focus:ring-2 focus:ring-sky-500"
-                      />
-                  </div>
-
-                  <button 
-                      className="w-full py-3 bg-sky-500 text-white font-bold rounded-lg hover:bg-sky-600 transition">
-                      Comprar Cartones
-                  </button>
-              </div>
-          </div>
-      </>
+                <div className="overflow-y-auto space-y-2 pr-2">
+                    {[
+                        "Carlos Pérez",
+                        "María Gómez",
+                        "Luis Rodríguez",
+                        "Ana Castillo",
+                        "Pedro Ramírez",
+                        "Lucía Herrera",
+                        "Jorge Fernández",
+                        "Elena Suárez",
+                        "Roberto Díaz",
+                        "Manuel Vargas",
+                    ].map((nombre, idx) => (
+                    <div
+                    key={idx}
+                    className="bg-gray-100 p-2 rounded-lg shadow-sm"
+                    >
+                    {nombre}
+                    </div>
+                ))}
+                </div>
+            </div>
+        </div>
+    </>
   )
 }

@@ -39,7 +39,7 @@ export default function CompraCarton2() {
   return (
     <>
       
-      <div className="max-w-2xl mx-auto rounded-xl shadow-md h-150 mt-10 overflow-y-auto">
+      <div className="max-w-2xl mx-auto rounded-xl shadow-md h-150 mt-30 overflow-y-auto">
 
       <div className="p-4 bg-sky-500 sticky top-0 z-10 mb-3">
             <h2 className="text-2xl text-slate-900 font-bold uppercase text-center"> Elige tu carton </h2>
@@ -67,7 +67,7 @@ export default function CompraCarton2() {
                         type="button"
                         onClick={() => setModalAbierto(true)}
                       >
-                            Ver
+                          Ver
                       </button>
                     </div>
                   );

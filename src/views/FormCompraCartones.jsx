@@ -42,6 +42,7 @@ export default function MultiStepForm() {
     <FormProvider {...methods}>
       <form onSubmit={methods.handleSubmit(onSubmitStep)}>
 
+        
         <StepComponent />
 
             <div className="flex max-w-2xl mx-auto mt-10">
