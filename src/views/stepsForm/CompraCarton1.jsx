@@ -13,6 +13,7 @@ export default function CompraCarton1() {
   const [ totalCostoCartones, setTotalCostoCartones ] = useState(costoCarton)
 
   const sumarCarton = () => {
+    if(cantCartones >= 100) return;
     setCantCartones(cantCartones+1);
   }
 
@@ -32,9 +33,9 @@ export default function CompraCarton1() {
   return (
 
         <>
-          <div className="mt-30 max-w-2xl mx-auto bg-white rounded-xl shadow-md overflow-hidden h-150">
+          <div className="max-w-2xl mx-auto bg-white rounded-xl shadow-md overflow-hidden h-150">
 
-              <div className="p-4 bg-sky-500">
+              <div className="p-4 bg-sky-500 sticky top-0 z-10 mb-3">
                   <h2 className="text-2xl text-slate-900 font-bold uppercase text-center"> Compra tu carton </h2>
               </div>
 

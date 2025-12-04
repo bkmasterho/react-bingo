@@ -40,7 +40,7 @@ export default function MultiStepForm() {
 
   return (
     <FormProvider {...methods}>
-      <form onSubmit={methods.handleSubmit(onSubmitStep)}>
+      <form onSubmit={methods.handleSubmit(onSubmitStep)} className="pt-24">
 
         
         <StepComponent />
